@@ -148,12 +148,7 @@ def predict_evaluate(x_train,x_test,y_train,y_test,log_model,rf_model,mlp_model)
     print("Recall:", recall_score(y_test, y_pred_rf))
     print("F1:", f1_score(y_test, y_pred_rf))
 
-    #roc-auc = 0.9-1.0  Measures how well the model separates fraud vs non-fraud HIGH
-    #log loss = <0.3 Measures how well the model separates fraud vs non-fraud  MEDIUM 
-    #precision = 0.6-1.0 Of all predicted frauds, how many are correct   MEDIUM
-    #recall = 0.8-1.0 Fraction of actual frauds detected; often more important than precision  VERY HIGH
-    #F1-score = 0.7-1.0 Fraction of actual frauds detected; often more important than precision  Medium
-    #Accuracy usually high ~0.99 Must avoid reliance on this metric LOW
+
 
 
     plt.plot(mlp_model.loss_curve_)
@@ -185,45 +180,7 @@ def predict_evaluate(x_train,x_test,y_train,y_test,log_model,rf_model,mlp_model)
 
 
 
-# load_prepare_data()
-#START COMMAND ABOVE ^
 
-
-
-# ----------------------------
-# Logistic Regression hyperparameters
-# ----------------------------
-# solver          : Optimization algorithm (liblinear, saga, lbfgs, etc.)
-# penalty         : Type of regularization ('l1', 'l2', 'elasticnet', 'none')
-# C               : Inverse regularization strength (smaller C -> stronger regularization)
-# class_weight    : 'balanced' or custom dict to handle imbalanced classes
-# max_iter        : Maximum number of iterations to converge
-# tol             : Stopping criteria tolerance
-
-# ----------------------------
-# Random Forest hyperparameters
-# ----------------------------
-# n_estimators    : Number of trees in the forest (more trees -> better stability)
-# max_depth       : Maximum depth of each tree (higher -> more complex, risk of overfitting)
-# min_samples_split : Minimum samples required to split a node
-# min_samples_leaf  : Minimum samples required at a leaf (lower -> better detection of rare frauds)
-# max_features    : Number of features considered for splitting at each node ('sqrt', 'log2', None)
-# class_weight    : 'balanced' or custom dict for imbalanced classes
-# bootstrap       : Whether to sample with replacement (True/False)
-# criterion       : 'gini' or 'entropy' (splitting metric)
-# random_state    : Seed for reproducibility
-
-# ----------------------------
-# Optional: MLPClassifier hyperparameters
-# ----------------------------
-# hidden_layer_sizes : Tuple of neurons per hidden layer, e.g., (32,) or (64,32)
-# activation         : Activation function ('relu', 'tanh', 'logistic')
-# solver             : Optimizer ('adam', 'sgd', 'lbfgs')
-# learning_rate_init : Learning rate for the optimizer
-# max_iter           : Maximum epochs/iterations
-# alpha              : L2 regularization term (prevents overfitting)
-# early_stopping     : Stops training if no improvement after N iterations
-# verbose            : Show progress during training
 
 run = 0
 while True:
